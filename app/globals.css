@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .hero-bg {
+    background-image: url('/images/bathroom-hero.jpg');
+    background-size: cover;
+    background-position: center 50%;
+  }
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+  }
+}
+
+/* ── Hero text reveal ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: fadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.hero-d1 { animation-delay: 0.05s; }
+.hero-d2 { animation-delay: 0.3s;  }
+.hero-d3 { animation-delay: 0.55s; }
+.hero-d4 { animation-delay: 0.8s;  }
+
+/* ── Service card stagger ─────────────────────────────── */
+.service-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cards-visible .service-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Trust bar item slide-up ──────────────────────────── */
+.trust-item {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease,
+              transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.trust-visible .trust-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── HowItWorks connector line draw ──────────────────── */
+.connector-line {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.steps-visible .connector-line {
+  transform: scaleX(1);
+}
+
+/* ── HowItWorks step icon pop ────────────────────────── */
+.step-icon {
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.45s ease,
+              transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.steps-visible .step-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── General scroll-triggered fade-up ────────────────── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.in-view .reveal-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Reduced motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal,
+  .service-card,
+  .trust-item,
+  .step-icon {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .connector-line {
+    transform: scaleX(1) !important;
+    transition: none !important;
+  }
+  .reveal-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
