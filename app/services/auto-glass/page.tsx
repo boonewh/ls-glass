@@ -241,16 +241,7 @@ export default function AutoGlassPage() {
 
       <Divider top="#0f172a" bottom="#ffffff" />
 
-      {/* ── INSURANCE SECTION ── */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="font-heading font-bold text-3xl text-texasNavy mb-6">HASSLE-FREE INSURANCE CLAIMS</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-8">
-            Dreading the phone call with your insurance agent? Let us handle it. We work with all major insurance providers and handle the billing directly.
-          </p>
 
-        </div>
-      </section>
 
       <Divider top="#ffffff" bottom="#0f172a" />
 
