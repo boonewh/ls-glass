@@ -122,6 +122,10 @@ export default function Home() {
             <i className="fas fa-star text-texasRed text-xl" />
             <span className="font-bold tracking-wide">Premium Materials</span>
           </div>
+          <div className="trust-item flex items-center gap-3" style={{ transitionDelay: "450ms" }}>
+            <i className="fas fa-dollar-sign text-texasRed text-xl" />
+            <span className="font-bold tracking-wide">Financing Available</span>
+          </div>
         </div>
       </div>
 
@@ -141,9 +145,9 @@ export default function Home() {
 
           <div ref={servicesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            {/* Featured: Bathroom Remodels */}
+            {/* Featured: Custom Showers & Bathroom Remodels */}
             <div
-              className="service-card col-span-1 md:col-span-2 lg:col-span-4 group relative h-[500px] rounded-lg overflow-hidden shadow-2xl cursor-pointer"
+              className="service-card col-span-1 md:col-span-2 lg:col-span-4 group relative h-[480px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl cursor-pointer"
               style={{ transitionDelay: "0ms" }}
               onClick={() => selectService("Bathroom Remodel")}
             >
@@ -153,13 +157,13 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-texasNavy/90 via-texasNavy/40 to-transparent" />
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
-                <h3 className="font-heading font-bold text-3xl md:text-5xl text-white mb-4">
-                  Custom Bathroom Remodels
+                <h3 className="font-heading font-bold text-white mb-4 leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                  Custom Showers &amp;<br />Bathroom Remodels
                 </h3>
-                <p className="text-gray-200 text-lg md:text-xl max-w-3xl mb-6">
-                  We handle the entire project from demolition to tile and glass.{" "}
-                  <span className="text-white font-black italic">No subcontracting.</span>{" "}
-                  Just one expert team transforming your space.
+                <p className="text-gray-200 text-base md:text-xl max-w-3xl mb-6">
+                  From a custom frameless shower to a full bathroom transformation —{" "}
+                  <span className="text-white font-black italic">demo to done</span>,
+                  with our own crew. No subcontracting, ever.
                 </p>
                 <span className="text-white font-bold uppercase tracking-widest text-sm group-hover:text-texasRed transition">
                   Get a Quote <i className="fas fa-arrow-right ml-2" />
@@ -167,7 +171,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Custom Showers */}
+            {/* Custom Cut Glass */}
             <div
               className="service-card group relative h-[400px] rounded-lg overflow-hidden shadow-xl cursor-pointer"
               style={{ transitionDelay: "100ms" }}
@@ -179,9 +183,9 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
               <div className="absolute bottom-0 left-0 p-6">
-                <i className="fas fa-shower text-texasRed text-2xl mb-3" />
-                <h3 className="font-heading font-bold text-2xl text-white mb-2">Custom Showers</h3>
-                <p className="text-gray-300 text-sm mb-4">Frameless &amp; semi-frameless luxury glass enclosures.</p>
+                <i className="fas fa-cut text-texasRed text-2xl mb-3" />
+                <h3 className="font-heading font-bold text-2xl text-white mb-2">Custom Cut Glass</h3>
+                <p className="text-gray-300 text-sm mb-4">Precision-cut glass for any application — shelves, tabletops, enclosures &amp; more.</p>
                 <span className="text-texasRed font-bold text-sm uppercase">Get Quote &rarr;</span>
               </div>
             </div>

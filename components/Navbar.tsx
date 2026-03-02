@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const services = [
   { label: "Bathroom Remodels", href: "/services/bathroom-remodel" },
-  { label: "Custom Showers",    href: "/services/custom-showers" },
+  { label: "Custom Cut Glass",   href: "/services/custom-cut-glass" },
   { label: "Residential Glass", href: "/services/residential-glass" },
   { label: "Commercial Glass",  href: "/services/commercial-glass" },
   { label: "Auto Glass",        href: "/services/auto-glass" },
@@ -62,7 +62,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src="/images/lone-star-logo2-small.png"
+                src="/images/lone-star-logo-small.png"
                 alt="Lone Star Glass & Shower"
                 width={500}
                 height={333}

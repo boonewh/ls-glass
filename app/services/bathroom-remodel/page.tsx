@@ -100,7 +100,7 @@ export default function BathroomRemodelPage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <div
         ref={heroRef}
-        className="relative h-screen bg-cover bg-center flex items-center justify-center"
+        className="relative h-[75vh] bg-cover bg-center flex items-center justify-center"
         style={{ backgroundImage: "url('/images/bathroom-remodel.jpg')" }}
       >
         <div className="absolute inset-0 bg-texasNavy/70 mix-blend-multiply" />
@@ -131,6 +131,18 @@ export default function BathroomRemodelPage() {
               See Our Work
             </a>
           </div>
+          {/* FINANCING BADGE - Paste this immediately AFTER the "hero-d4" button container div */}
+          <div className="hero-reveal hero-d4 mt-8 flex justify-center">
+            <a 
+              href="#contact" 
+              className="group flex items-center gap-3 bg-black/40 backdrop-blur-md border border-white/20 px-5 py-2.5 rounded-full text-white text-sm font-bold tracking-wide hover:bg-white/10 transition-all duration-300"
+            >
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
+              <span>Financing Available</span>
+              <span className="h-4 w-px bg-white/20 mx-1"></span>
+              <span className="text-gray-300 group-hover:text-white font-normal text-xs uppercase">Ask for details <i className="fas fa-arrow-right ml-1 -rotate-45 group-hover:rotate-0 transition-transform"></i></span>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -148,6 +160,10 @@ export default function BathroomRemodelPage() {
           <div className="trust-item flex items-center gap-3" style={{ transitionDelay: "300ms" }}>
             <i className="fas fa-th-large text-texasRed text-xl" />
             <span className="font-bold tracking-wide">Custom Tile &amp; Glass</span>
+          </div>
+          <div className="trust-item flex items-center gap-3" style={{ transitionDelay: "450ms" }}>
+            <i className="fas fa-dollar-sign text-texasRed text-xl" />
+            <span className="font-bold tracking-wide">Financing Available</span>
           </div>
         </div>
       </div>

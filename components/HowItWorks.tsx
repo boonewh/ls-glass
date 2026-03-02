@@ -22,10 +22,10 @@ const steps = [
       "Our own crew handles every install — not subcontractors, not a stranger in your home. The team that quoted your job is the team that shows up.",
   },
   {
-    icon: "fas fa-clipboard-check",
-    title: "Final Walk-Through",
+    icon: "fas fa-shield-alt",
+    title: "Satisfaction Guaranteed",
     description:
-      "We don't leave until you're satisfied. Every edge, every seal, every detail gets inspected together so you know exactly what you're getting.",
+      "Every job leaves our name on it — and we stand behind that. If anything isn't right, we make it right. No hassle, no excuses.",
   },
 ];
 
