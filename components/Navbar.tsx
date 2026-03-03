@@ -5,11 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const services = [
-  { label: "Bathroom Remodels", href: "/services/bathroom-remodel" },
-  { label: "Custom Cut Glass",   href: "/services/custom-cut-glass" },
-  { label: "Residential Glass", href: "/services/residential-glass" },
-  { label: "Commercial Glass",  href: "/services/commercial-glass" },
-  { label: "Auto Glass",        href: "/services/auto-glass" },
+  { label: "Bathroom Remodels",         href: "/services/bathroom-remodel" },
+  { label: "Custom Cut Glass",          href: "/services/custom-cut-glass" },
+  { label: "Residential Glass",         href: "/services/residential-glass" },
+  { label: "Commercial Glass",          href: "/services/commercial-glass" },
+  { label: "Auto Glass",               href: "/services/auto-glass" },
+  { label: "Oilfield & Heavy Equipment", href: "/services/heavy-equipment" },
 ];
 
 export default function Navbar() {

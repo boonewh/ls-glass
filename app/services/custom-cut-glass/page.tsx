@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image"; // Added for optimized images
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
@@ -33,35 +33,35 @@ function useReveal(triggerClass: string) {
 }
 
 /* ── Data: Residential Options ── */
-const residentialServices = [
+const flatGlassServices = [
   {
-    title: "Tabletops & Furniture",
-    desc: "Protect your wood furniture from scratches and spills. We cut 1/4” or 3/8” glass to fit any shape—circles, ovals, or irregular dining tables.",
+    title: "Tabletops & Desk Glass",
+    desc: "Protect your wood furniture. We cut 1/4” or 3/8” glass to fit any shape—circles, ovals, or irregular dining tables.",
   },
   {
-    title: "Shelving & Cabinets",
-    desc: "Replace wood shelves with heavy glass to let light flow through your cabinets. We also install patterned glass inserts (Rain, Reeded, Frosted).",
+    title: "Glass Shelving",
+    desc: "Replace wood shelves with heavy glass to let light flow through your cabinets. We use tempered glass for strength.",
   },
   {
-    title: "Mirrors & Gym Walls",
-    desc: "From vanity mirrors cut around lighting fixtures to floor-to-ceiling gym walls. Polished edges and safety backing available.",
+    title: "Fireplace Glass",
+    desc: "We stock high-temperature NeoCeram ceramic glass for wood stoves and fireplace inserts. Heat resistant up to 1400°F.",
   },
   {
-    title: "Wood Stove Glass",
-    desc: "We stock high-temperature NeoCeram ceramic glass for fireplace inserts and wood stoves. Don't let a cracked pane ruin your heat.",
+    title: "Safety Glass",
+    desc: "Laminated and tempered glass cut to size for DIY projects, picture frames, or custom enclosures.",
   },
 ];
 
 /* ── Data: Edges ── */
 const edges = [
-  { label: "Flat Polish", desc: "Sleek, shiny, square edge. The modern standard." },
-  { label: "Beveled Edge", desc: "Decorative sloped edge (1/2\" to 1.5\"). Elegant for mirrors." },
-  { label: "Seamed Edge", desc: "Sanded dull edge. Best for framed glass (cheaper)." },
+  { label: "Flat Polish", desc: "Sleek, shiny, square edge. The modern standard for visible edges." },
+  { label: "Beveled Edge", desc: "Decorative sloped edge (1/2\" to 1.5\"). Elegant for mirrors and tabletops." },
+  { label: "Seamed Edge", desc: "Sanded dull edge. Best for glass that sits inside a frame." },
 ];
 
 export default function CustomCutGlassPage() {
   const heroRef     = useRef<HTMLDivElement>(null);
-  const oilRef      = useReveal("in-view");
+  const decorRef    = useReveal("in-view");
   const techRef     = useReveal("in-view");
   const galleryRef  = useReveal("in-view");
 
@@ -85,9 +85,9 @@ export default function CustomCutGlassPage() {
       <div
         ref={heroRef}
         className="relative h-[75vh] bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: "url('/images/big-cat.jpg')" }} 
+        style={{ backgroundImage: "url('/images/glass-table.jpg')" }} // Suggestion: Close up of a glass table edge or workshop
       >
-        <div className="absolute inset-0 bg-texasNavy/70 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-texasNavy/60 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="grain absolute inset-0 pointer-events-none z-[1]" />
 
@@ -96,10 +96,10 @@ export default function CustomCutGlassPage() {
             Odessa & Midland
           </p>
           <h1 className="hero-reveal hero-d2 font-heading font-bold text-5xl md:text-7xl text-white mb-6 leading-tight text-shadow tracking-tight">
-            CUSTOM CUT.<br />PRECISION FIT.
+            YOUR SPECS.<br />OUR SHOP.
           </h1>
           <p className="hero-reveal hero-d3 text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-            From heavy equipment safety glass to elegant dining tabletops. If it’s flat glass, we cut it to your exact specs.
+            From heavy glass tabletops to custom mirrors and cabinet inserts. Measured precisely and cut locally.
           </p>
           <div className="hero-reveal hero-d4">
             <a
@@ -109,17 +109,20 @@ export default function CustomCutGlassPage() {
               Get a Quote
             </a>
           </div>
-          {/* FINANCING BADGE - Paste this immediately AFTER the "hero-d4" button container div */}
+
+          {/* FINANCING BADGE */}
           <div className="hero-reveal hero-d4 mt-8 flex justify-center">
-            <a 
+            <Link 
               href="#contact" 
-              className="group flex items-center gap-3 bg-black/40 backdrop-blur-md border border-white/20 px-5 py-2.5 rounded-full text-white text-sm font-bold tracking-wide hover:bg-white/10 transition-all duration-300"
+              className="group flex items-center gap-3 bg-black/40 backdrop-blur-md border border-white/20 px-5 py-2.5 rounded-full text-white text-sm font-bold tracking-wide hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
               <span>Financing Available</span>
               <span className="h-4 w-px bg-white/20 mx-1"></span>
-              <span className="text-gray-300 group-hover:text-white font-normal text-xs uppercase">Ask for details <i className="fas fa-arrow-right ml-1 -rotate-45 group-hover:rotate-0 transition-transform"></i></span>
-            </a>
+              <span className="text-gray-300 group-hover:text-white font-normal text-xs uppercase flex items-center">
+                Ask for details <i className="fas fa-arrow-right ml-2 -rotate-45 group-hover:rotate-0 transition-transform"></i>
+              </span>
+            </Link>
           </div>
         </div>
       </div>
@@ -128,28 +131,28 @@ export default function CustomCutGlassPage() {
       <div className="bg-white border-b border-gray-200 py-6 relative z-20">
         <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-6 md:gap-12 text-gray-600 text-sm font-bold uppercase tracking-widest">
           <span className="flex items-center gap-2"><i className="fas fa-ruler-combined text-texasRed"></i> Precision Cutting</span>
-          <span className="flex items-center gap-2"><i className="fas fa-hard-hat text-texasRed"></i> Laminated Safety</span>
+          <span className="flex items-center gap-2"><i className="fas fa-gem text-texasRed"></i> Polished Edges</span>
           <span className="flex items-center gap-2"><i className="fas fa-clock text-texasRed"></i> Fast Turnaround</span>
         </div>
       </div>
 
       <Divider top="#ffffff" bottom="#f9fafb" />
 
-      {/* ── RESIDENTIAL SECTION (Left Text, Right Image) ── */}
+      {/* ── FURNITURE & FLAT GLASS ── */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             
             {/* Text Content */}
             <div className="lg:w-1/2">
-              <h4 className="text-texasNavy/60 font-bold tracking-widest uppercase text-sm mb-2">For The Home</h4>
+              <h4 className="text-texasNavy/60 font-bold tracking-widest uppercase text-sm mb-2">Interior Solutions</h4>
               <h2 className="font-heading font-bold text-4xl text-texasNavy mb-6">FURNITURE &amp; DECOR</h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
                 Don't settle for "standard" sizes. We fabricate glass to fit your existing frames, furniture, and fixtures. We stock 1/4", 3/8", and 1/2" clear glass, ready to cut.
               </p>
               
               <div className="grid grid-cols-1 gap-6">
-                {residentialServices.map((item, i) => (
+                {flatGlassServices.map((item, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="w-2 h-2 mt-2.5 bg-texasRed rounded-full flex-shrink-0" />
                     <div>
@@ -166,7 +169,7 @@ export default function CustomCutGlassPage() {
               {/* Main Image */}
               <div className="absolute top-0 right-0 w-[85%] h-[80%] rounded-lg shadow-xl overflow-hidden z-10">
                  <Image 
-                   src="/images/glass-table.jpg" // REPLACE WITH: Tabletop or shelving image
+                   src="/images/glass-table.jpg" // REPLACE: Nice dining table
                    alt="Custom glass tabletop"
                    fill
                    className="object-cover"
@@ -175,8 +178,8 @@ export default function CustomCutGlassPage() {
               {/* Secondary Image (Overlap) */}
               <div className="absolute bottom-0 left-0 w-[50%] h-[50%] rounded-lg shadow-2xl overflow-hidden z-20 border-4 border-gray-50">
                  <Image 
-                   src="/images/cabinet1.jpg" // REPLACE WITH: Detail shot of edge or shelves
-                   alt="Polished glass edge"
+                   src="/images/cabinet1.jpg" // REPLACE: Detail of shelves
+                   alt="Glass shelving"
                    fill
                    className="object-cover"
                  />
@@ -187,74 +190,70 @@ export default function CustomCutGlassPage() {
         </div>
       </section>
 
-      <Divider top="#f9fafb" bottom="#0f172a" />
+      <Divider top="#f9fafb" bottom="#1e293b" />
 
-      {/* ── HEAVY EQUIPMENT / OILFIELD SECTION (Dark Theme) ── */}
-      {/* This is the new "Significant Add" requested */}
+      {/* ── ARCHITECTURAL & DECORATIVE (Replaces Oilfield) ── */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
         {/* Background Texture */}
-        <div className="absolute inset-0 opacity-10 bg-[url('/images/diamond-plate-pattern.png')] pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern-glass-texture.jpg')] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div ref={oilRef} className="flex flex-col lg:flex-row gap-16 items-center">
+          <div ref={decorRef} className="flex flex-col lg:flex-row-reverse gap-16 items-center">
             
-            {/* Image: CAT Grader / Heavy Equipment */}
+            {/* Visual: Mirror/Pattern Split */}
             <div className="lg:w-1/2 relative">
-               <div className="relative h-[400px] md:h-[500px] w-full rounded-lg overflow-hidden shadow-2xl border border-white/20 group">
+               <div className="relative h-[450px] w-full rounded-lg overflow-hidden shadow-2xl border border-white/20">
                  <Image 
-                    src="/images/big-cat.jpg" // REPLACE WITH: The specific CAT picture provided
-                    alt="Caterpillar Motor Grader Glass Replacement"
+                    src="/images/custom-glass-hi-res.jpg" // REPLACE: Large vanity or gym mirror
+                    alt="Custom Mirror Installation"
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
+                    className="object-cover"
                  />
                  {/* Badge */}
-                 <div className="absolute top-4 left-4 bg-texasRed text-white px-4 py-1 font-bold uppercase tracking-wider text-xs rounded shadow-lg">
-                   Oilfield Tough
+                 <div className="absolute bottom-6 right-6 bg-white text-texasNavy px-6 py-2 font-bold uppercase tracking-widest shadow-lg text-sm">
+                   Custom Design
                  </div>
                </div>
-               {/* Decorative Element */}
-               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-dashed border-white/20 rounded-lg -z-10"></div>
             </div>
 
             {/* Content */}
             <div className="lg:w-1/2">
               <div className="flex items-center gap-3 mb-4">
-                <i className="fas fa-industry text-texasRed text-2xl"></i>
-                <span className="font-bold tracking-widest text-gray-400 uppercase text-sm">Commercial &amp; Industrial</span>
+                <i className="fas fa-paint-roller text-texasRed text-2xl"></i>
+                <span className="font-bold tracking-widest text-gray-400 uppercase text-sm">Mirrors &amp; Patterns</span>
               </div>
               
               <h2 className="font-heading font-black text-4xl md:text-5xl mb-6 leading-tight">
-                HEAVY EQUIPMENT <br />
-                <span className="text-texasRed">GLASS REPAIR.</span>
+                MIRRORS &amp; <br />
+                <span className="text-texasRed">DECORATIVE GLASS.</span>
               </h2>
               
               <p className="text-xl text-gray-300 mb-8 font-light">
-                Downtime costs you money. When a window breaks on a dozer, crane, or maintainer, you can't wait weeks for a factory part. 
+                Glass isn't just for looking through—it's for looking at. We fabricate custom mirrors and patterned glass to transform your kitchen, bath, or home gym.
               </p>
 
-              <div className="bg-white/5 p-8 rounded-lg border border-white/10 mb-8 backdrop-blur-sm">
-                <h3 className="font-bold text-xl mb-4 text-white">We Cut Patterns On-Site or In-Shop</h3>
-                <ul className="space-y-4 text-gray-300">
-                  <li className="flex items-start">
-                    <i className="fas fa-check-circle text-texasRed mt-1 mr-3"></i>
-                    <span><strong>Laminated Safety Glass:</strong> We stock clear and tinted laminated glass that meets safety regulations for heavy machinery.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <i className="fas fa-check-circle text-texasRed mt-1 mr-3"></i>
-                    <span><strong>Flat Glass Fabrication:</strong> We can cut flat glass for almost any make—CAT, John Deere, Case, and more.</span>
-                  </li>
-                  <li className="flex items-start">
-                    <i className="fas fa-check-circle text-texasRed mt-1 mr-3"></i>
-                    <span><strong>Polycarbonate &amp; Lexan:</strong> Need something unbreakable? We cut high-impact polycarbonate for forestry and intense environments.</span>
-                  </li>
-                </ul>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {/* Mirrors */}
+                <div className="bg-white/5 p-6 rounded border border-white/10 hover:border-texasRed transition">
+                   <h4 className="font-bold text-white text-xl mb-2">Custom Mirrors</h4>
+                   <p className="text-sm text-gray-400">
+                     From wall-to-wall gym mirrors to custom vanity shapes. We cut around outlets and lights for a perfect fit.
+                   </p>
+                </div>
+                {/* Cabinet Glass */}
+                <div className="bg-white/5 p-6 rounded border border-white/10 hover:border-texasRed transition">
+                   <h4 className="font-bold text-white text-xl mb-2">Cabinet Inserts</h4>
+                   <p className="text-sm text-gray-400">
+                     Upgrade kitchen cabinets with decorative glass. We stock Rain, Reeded (Fluted), Frosted, and more.
+                   </p>
+                </div>
               </div>
 
               <a 
-                href="tel:4323163142"
-                className="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded font-bold hover:bg-texasRed hover:text-white transition duration-300"
+                href="#contact"
+                className="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-3 rounded font-bold hover:bg-texasRed hover:text-white transition duration-300"
               >
-                <i className="fas fa-phone"></i> Call for Dispatch
+                Explore Patterns &rarr;
               </a>
             </div>
 
@@ -262,7 +261,7 @@ export default function CustomCutGlassPage() {
         </div>
       </section>
 
-      <Divider top="#0f172a" bottom="#ffffff" />
+      <Divider top="#1e293b" bottom="#ffffff" />
 
       {/* ── TECHNICAL SPECS & EDGEWORK ── */}
       <section className="py-24 bg-white">
@@ -294,7 +293,7 @@ export default function CustomCutGlassPage() {
             {/* Visual for Edges */}
             <div className="md:w-1/2 h-[400px] w-full relative rounded-lg overflow-hidden shadow-lg bg-gray-100">
                <Image 
-                 src="/images/polished-edge.jpg" // REPLACE WITH: Close up of glass edges
+                 src="/images/polished-edge.jpg" // REPLACE: Close up of glass edges
                  alt="Polished and beveled glass edges"
                  fill
                  className="object-cover"
@@ -314,20 +313,24 @@ export default function CustomCutGlassPage() {
       {/* ── MINI GALLERY ── */}
       <section className="py-12 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4">
-          <h3 className="text-center font-heading font-bold text-2xl text-texasNavy mb-8">RECENT PROJECTS</h3>
-          <div ref={galleryRef} className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {[
-              { src: "/images/broken-glass.jpg",  alt: "Broken glass repair" },
-              { src: "/images/broken-glass2.jpg", alt: "Glass replacement" },
-              { src: "/images/big-cat2.jpg",       alt: "Heavy equipment glass" },
-              { src: "/images/custom-work.jpg",      alt: "Custom cut project" },
-              { src: "/images/cabinet2.jpg",      alt: "Custom cut project" },
-            ].map((img) => (
-              <div key={img.src} className="relative h-80 md:h-[420px] rounded-lg overflow-hidden group cursor-pointer">
-                <Image src={img.src} fill alt={img.alt} className="object-cover transition duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
-              </div>
-            ))}
+          <h3 className="text-center font-heading font-bold text-2xl text-texasNavy mb-8">RECENT CUSTOM PROJECTS</h3>
+          <div ref={galleryRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80">
+            {/* Gallery Item 1 */}
+            <div className="relative rounded-lg overflow-hidden group cursor-pointer">
+              <Image src="/images/custom-gallery-1.jpg" fill alt="Custom Project 1" className="object-cover transition group-hover:scale-110" />
+            </div>
+            {/* Gallery Item 2 */}
+            <div className="relative rounded-lg overflow-hidden group cursor-pointer">
+              <Image src="/images/custom-gallery-2.jpg" fill alt="Custom Project 2" className="object-cover transition group-hover:scale-110" />
+            </div>
+            {/* Gallery Item 3 */}
+            <div className="relative rounded-lg overflow-hidden group cursor-pointer">
+              <Image src="/images/custom-gallery-3.jpg" fill alt="Custom Project 3" className="object-cover transition group-hover:scale-110" />
+            </div>
+             {/* Gallery Item 4 */}
+             <div className="relative rounded-lg overflow-hidden group cursor-pointer">
+              <Image src="/images/custom-gallery-4.jpg" fill alt="Custom Project 4" className="object-cover transition group-hover:scale-110" />
+            </div>
           </div>
         </div>
       </section>
