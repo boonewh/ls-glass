@@ -57,7 +57,7 @@ export default function CommercialGlassPage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <div
         ref={heroRef}
-        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center pt-20"
         style={{ backgroundImage: "url('/images/commercial-front.jpg')" }} 
       >
         <div className="absolute inset-0 bg-texasNavy/70 mix-blend-multiply" />
@@ -125,7 +125,7 @@ export default function CommercialGlassPage() {
           <div ref={exteriorRef} className="flex flex-col lg:flex-row gap-16 items-center">
             
             {/* Text Content */}
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <h4 className="text-texasNavy/60 font-bold tracking-widest uppercase text-sm mb-2">Exterior Glazing</h4>
               <h2 className="font-heading font-black text-3xl md:text-5xl text-texasNavy mb-6 leading-tight">
                 STOREFRONTS &amp;<br />
@@ -193,7 +193,7 @@ export default function CommercialGlassPage() {
           <div ref={interiorRef} className="flex flex-col lg:flex-row-reverse gap-16 items-center">
             
             {/* Text Content */}
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <h4 className="text-blue-400 font-bold tracking-widest uppercase text-sm mb-2">Interior Solutions</h4>
               <h2 className="font-heading font-black text-3xl md:text-5xl mb-6 leading-tight">
                 PARTITIONS &amp;<br />
@@ -220,9 +220,9 @@ export default function CommercialGlassPage() {
             </div>
 
             {/* Visual Block */}
-            <div className="lg:w-1/2 relative">
+            <div className="w-full lg:w-1/2 relative">
                <div className="relative h-[450px] w-full rounded-lg overflow-hidden shadow-2xl border border-white/20">
-                 <Image 
+                 <Image
                    src="/images/office-dividers.jpg" // REPLACE: Modern glass office wall
                    alt="Frameless Glass Office Partition"
                    fill

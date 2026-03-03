@@ -56,7 +56,7 @@ export default function OilfieldPage() {
       {/* ── HERO: INDUSTRIAL VIBE ────────────────────────── */}
       <div
         ref={heroRef}
-        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center pt-20"
         style={{ backgroundImage: "url('/images/big-cat.jpg')" }} // Suggestion: Silhouette of rig or heavy equipment at sunset
       >
         <div className="absolute inset-0 bg-texasNavy/70 mix-blend-multiply" />
@@ -110,7 +110,7 @@ export default function OilfieldPage() {
           <div ref={machineryRef} className="flex flex-col lg:flex-row gap-16 items-center">
             
             {/* Text Content */}
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <h4 className="text-texasNavy/60 font-bold tracking-widest uppercase text-sm mb-2">
                 Oilfield Equipment Cabs
               </h4>

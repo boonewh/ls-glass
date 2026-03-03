@@ -56,7 +56,7 @@ export default function ResidentialGlassPage() {
       {/* ── HERO: Broad Appeal (Repair + Aesthetic) ── */}
       <div
         ref={heroRef}
-        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center pt-20"
         style={{ backgroundImage: "url('/images/residential.jpg')" }} 
       >
         <div className="absolute inset-0 bg-texasNavy/60 mix-blend-multiply" />
@@ -178,7 +178,7 @@ export default function ResidentialGlassPage() {
           <div ref={aestheticRef} className="flex flex-col lg:flex-row gap-16 items-center">
             
             {/* Visual: Before/After Concept */}
-            <div className="lg:w-1/2 relative">
+            <div className="w-full lg:w-1/2 relative">
                {/* Back Image (Old) */}
                <div className="absolute top-0 right-0 w-[100%] h-[100%] opacity-50 grayscale transform translate-x-4 -translate-y-4 rounded-lg overflow-hidden border border-white/20">
                  <Image src="/images/residential-glass.jpg" fill alt="Old Foggy Window"/>
@@ -196,7 +196,7 @@ export default function ResidentialGlassPage() {
             </div>
 
             {/* Text Content */}
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <h4 className="text-blue-400 font-bold tracking-widest uppercase text-sm mb-2">
                 Modernize Without Construction
               </h4>

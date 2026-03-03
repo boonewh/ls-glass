@@ -84,7 +84,7 @@ export default function CustomCutGlassPage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <div
         ref={heroRef}
-        className="relative h-[75vh] bg-cover bg-center flex items-center justify-center"
+        className="relative h-[75vh] bg-cover bg-center flex items-center justify-center pt-20"
         style={{ backgroundImage: "url('/images/glass-table.jpg')" }} // Suggestion: Close up of a glass table edge or workshop
       >
         <div className="absolute inset-0 bg-texasNavy/60 mix-blend-multiply" />
@@ -201,7 +201,7 @@ export default function CustomCutGlassPage() {
           <div ref={decorRef} className="flex flex-col lg:flex-row-reverse gap-16 items-center">
             
             {/* Visual: Mirror/Pattern Split */}
-            <div className="lg:w-1/2 relative">
+            <div className="w-full lg:w-1/2 relative">
                <div className="relative h-[450px] w-full rounded-lg overflow-hidden shadow-2xl border border-white/20">
                  <Image 
                     src="/images/custom-glass-hi-res.jpg" // REPLACE: Large vanity or gym mirror
