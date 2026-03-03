@@ -56,7 +56,7 @@ export default function ResidentialGlassPage() {
       {/* ── HERO: Broad Appeal (Repair + Aesthetic) ── */}
       <div
         ref={heroRef}
-        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center pt-32"
+        className="relative min-h-[85vh] bg-cover bg-center flex items-center justify-center pt-24"
         style={{ backgroundImage: "url('/images/residential.jpg')" }} 
       >
         <div className="absolute inset-0 bg-texasNavy/60 mix-blend-multiply" />

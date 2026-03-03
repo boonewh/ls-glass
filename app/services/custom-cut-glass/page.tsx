@@ -84,7 +84,7 @@ export default function CustomCutGlassPage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <div
         ref={heroRef}
-        className="relative h-[75vh] bg-cover bg-center flex items-center justify-center pt-32"
+        className="relative min-h-[75vh] bg-cover bg-center flex items-center justify-center pt-24"
         style={{ backgroundImage: "url('/images/glass-table.jpg')" }} // Suggestion: Close up of a glass table edge or workshop
       >
         <div className="absolute inset-0 bg-texasNavy/60 mix-blend-multiply" />

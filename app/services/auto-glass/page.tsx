@@ -56,7 +56,7 @@ export default function AutoGlassPage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <div
         ref={heroRef}
-        className="relative h-[80vh] bg-cover bg-center flex items-center justify-center pt-32"
+        className="relative min-h-[80vh] bg-cover bg-center flex items-center justify-center pt-24"
         style={{ backgroundImage: "url('/images/auto-glass.jpg')" }} // Suggestion: View from inside car looking at road
       >
         <div className="absolute inset-0 bg-texasNavy/60 mix-blend-multiply" />

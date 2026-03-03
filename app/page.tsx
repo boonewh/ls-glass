@@ -74,7 +74,7 @@ export default function Home() {
       <Navbar />
 
       {/* HERO */}
-      <div ref={heroRef} className="relative h-screen hero-bg flex items-center justify-center">
+      <div ref={heroRef} className="relative min-h-screen hero-bg flex items-center justify-center pt-24">
         <div className="absolute inset-0 bg-texasNavy/70 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/40" />
         {/* Grain texture overlay */}

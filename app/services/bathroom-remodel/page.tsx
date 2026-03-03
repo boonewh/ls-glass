@@ -100,7 +100,7 @@ export default function BathroomRemodelPage() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <div
         ref={heroRef}
-        className="relative h-[75vh] bg-cover bg-center flex items-center justify-center pt-32"
+        className="relative min-h-[75vh] bg-cover bg-center flex items-center justify-center pt-24"
         style={{ backgroundImage: "url('/images/bathroom-remodel.jpg')" }}
       >
         <div className="absolute inset-0 bg-texasNavy/70 mix-blend-multiply" />
