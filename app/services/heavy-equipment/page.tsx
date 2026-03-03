@@ -56,7 +56,7 @@ export default function OilfieldPage() {
       {/* ── HERO: INDUSTRIAL VIBE ────────────────────────── */}
       <div
         ref={heroRef}
-        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center pt-20"
+        className="relative h-[85vh] bg-cover bg-center flex items-center justify-center pt-32"
         style={{ backgroundImage: "url('/images/big-cat.jpg')" }} // Suggestion: Silhouette of rig or heavy equipment at sunset
       >
         <div className="absolute inset-0 bg-texasNavy/70 mix-blend-multiply" />
