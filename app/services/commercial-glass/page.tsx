@@ -58,7 +58,7 @@ export default function CommercialGlassPage() {
       <div
         ref={heroRef}
         className="relative min-h-[85vh] bg-cover bg-center flex items-center justify-center pt-24"
-        style={{ backgroundImage: "url('/images/commercial-front.jpg')" }} 
+        style={{ backgroundImage: "url('/images/store-doors.jpg')" }} 
       >
         <div className="absolute inset-0 bg-texasNavy/70 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/40" />

@@ -310,30 +310,30 @@ export default function CustomCutGlassPage() {
         </div>
       </section>
 
-      {/* ── MINI GALLERY ── */}
+      {/* ── MINI GALLERY ── 
       <section className="py-12 bg-gray-50 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4">
           <h3 className="text-center font-heading font-bold text-2xl text-texasNavy mb-8">RECENT CUSTOM PROJECTS</h3>
-          <div ref={galleryRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80">
-            {/* Gallery Item 1 */}
+          <div ref={galleryRef} className="grid grid-cols-2 md:grid-cols-4 gap-4 h-64 md:h-80">*/}
+            {/* Gallery Item 1 
             <div className="relative rounded-lg overflow-hidden group cursor-pointer">
               <Image src="/images/custom-gallery-1.jpg" fill alt="Custom Project 1" className="object-cover transition group-hover:scale-110" />
-            </div>
-            {/* Gallery Item 2 */}
+            </div>*/}
+            {/* Gallery Item 2 
             <div className="relative rounded-lg overflow-hidden group cursor-pointer">
               <Image src="/images/custom-gallery-2.jpg" fill alt="Custom Project 2" className="object-cover transition group-hover:scale-110" />
-            </div>
-            {/* Gallery Item 3 */}
+            </div>*/}
+            {/* Gallery Item 3 
             <div className="relative rounded-lg overflow-hidden group cursor-pointer">
               <Image src="/images/custom-gallery-3.jpg" fill alt="Custom Project 3" className="object-cover transition group-hover:scale-110" />
-            </div>
-             {/* Gallery Item 4 */}
+            </div>*/}
+             {/* Gallery Item 4
              <div className="relative rounded-lg overflow-hidden group cursor-pointer">
               <Image src="/images/custom-gallery-4.jpg" fill alt="Custom Project 4" className="object-cover transition group-hover:scale-110" />
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       <Divider top="#f9fafb" bottom="#0f172a" />
 
