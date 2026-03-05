@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
 import HowItWorks from "@/components/HowItWorks";
@@ -146,10 +147,10 @@ export default function Home() {
           <div ref={servicesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {/* Featured Left: Custom Showers & Bathroom Remodels */}
-            <div
-              className="service-card col-span-1 md:col-span-2 lg:col-span-2 group relative h-[420px] md:h-[480px] rounded-lg overflow-hidden shadow-2xl cursor-pointer"
+            <Link
+              href="/services/bathroom-remodel"
+              className="service-card col-span-1 md:col-span-2 lg:col-span-2 group relative h-[420px] md:h-[480px] rounded-lg overflow-hidden shadow-2xl cursor-pointer block"
               style={{ transitionDelay: "0ms" }}
-              onClick={() => selectService("Bathroom Remodel")}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition duration-700 transform group-hover:scale-110"
@@ -166,16 +167,16 @@ export default function Home() {
                   with our own crew.
                 </p>
                 <span className="text-white font-bold uppercase tracking-widest text-sm group-hover:text-texasRed transition">
-                  Get a Quote <i className="fas fa-arrow-right ml-2" />
+                  Learn More <i className="fas fa-arrow-right ml-2" />
                 </span>
               </div>
-            </div>
+            </Link>
 
             {/* Featured Right: Residential Glass */}
-            <div
-              className="service-card col-span-1 md:col-span-2 lg:col-span-2 group relative h-[420px] md:h-[480px] rounded-lg overflow-hidden shadow-2xl cursor-pointer"
+            <Link
+              href="/services/residential-glass"
+              className="service-card col-span-1 md:col-span-2 lg:col-span-2 group relative h-[420px] md:h-[480px] rounded-lg overflow-hidden shadow-2xl cursor-pointer block"
               style={{ transitionDelay: "50ms" }}
-              onClick={() => selectService("Home Windows")}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition duration-700 transform group-hover:scale-110"
@@ -190,16 +191,16 @@ export default function Home() {
                   Window replacements, custom mirrors, shower glass, and tabletops — precision-cut and installed for your home.
                 </p>
                 <span className="text-white font-bold uppercase tracking-widest text-sm group-hover:text-texasRed transition">
-                  Get a Quote <i className="fas fa-arrow-right ml-2" />
+                  Learn More <i className="fas fa-arrow-right ml-2" />
                 </span>
               </div>
-            </div>
+            </Link>
 
             {/* Custom Cut Glass */}
-            <div
-              className="service-card group relative h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer"
+            <Link
+              href="/services/custom-cut-glass"
+              className="service-card group relative h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer block"
               style={{ transitionDelay: "100ms" }}
-              onClick={() => selectService("Custom Shower")}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition duration-700 transform group-hover:scale-110"
@@ -210,15 +211,15 @@ export default function Home() {
                 <i className="fas fa-cut text-texasRed text-2xl mb-3" />
                 <h3 className="font-heading font-bold text-2xl text-white mb-2">Custom Cut Glass</h3>
                 <p className="text-gray-300 text-sm mb-4">Precision-cut glass for any application — shelves, tabletops, enclosures &amp; more.</p>
-                <span className="text-texasRed font-bold text-sm uppercase">Get Quote &rarr;</span>
+                <span className="text-texasRed font-bold text-sm uppercase">Learn More &rarr;</span>
               </div>
-            </div>
+            </Link>
 
             {/* Commercial Glass */}
-            <div
-              className="service-card group relative h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer"
+            <Link
+              href="/services/commercial-glass"
+              className="service-card group relative h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer block"
               style={{ transitionDelay: "200ms" }}
-              onClick={() => selectService("Commercial Glass")}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition duration-700 transform group-hover:scale-110"
@@ -229,15 +230,15 @@ export default function Home() {
                 <i className="fas fa-building text-texasRed text-2xl mb-3" />
                 <h3 className="font-heading font-bold text-2xl text-white mb-2">Commercial</h3>
                 <p className="text-gray-300 text-sm mb-4">Storefront demolition, replacement &amp; repair.</p>
-                <span className="text-texasRed font-bold text-sm uppercase">Get Quote &rarr;</span>
+                <span className="text-texasRed font-bold text-sm uppercase">Learn More &rarr;</span>
               </div>
-            </div>
+            </Link>
 
             {/* Auto Glass */}
-            <div
-              className="service-card group relative h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer"
+            <Link
+              href="/services/auto-glass"
+              className="service-card group relative h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer block"
               style={{ transitionDelay: "300ms" }}
-              onClick={() => selectService("Auto Glass")}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition duration-700 transform group-hover:scale-110"
@@ -248,15 +249,15 @@ export default function Home() {
                 <i className="fas fa-car text-texasRed text-2xl mb-3" />
                 <h3 className="font-heading font-bold text-2xl text-white mb-2">Auto Glass</h3>
                 <p className="text-gray-300 text-sm mb-4">Windshield repair and replacement. Fast service.</p>
-                <span className="text-texasRed font-bold text-sm uppercase">Get Quote &rarr;</span>
+                <span className="text-texasRed font-bold text-sm uppercase">Learn More &rarr;</span>
               </div>
-            </div>
+            </Link>
 
             {/* Oilfield & Heavy Equipment */}
-            <div
-              className="service-card group relative h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer"
+            <Link
+              href="/services/heavy-equipment"
+              className="service-card group relative h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer block"
               style={{ transitionDelay: "400ms" }}
-              onClick={() => selectService("Oilfield & Heavy Equipment")}
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition duration-700 transform group-hover:scale-110"
@@ -267,9 +268,9 @@ export default function Home() {
                 <i className="fas fa-hard-hat text-texasRed text-2xl mb-3" />
                 <h3 className="font-heading font-bold text-2xl text-white mb-2">Oilfield &amp; Heavy Equipment</h3>
                 <p className="text-gray-300 text-sm mb-4">Heavy-duty glass for rigs, loaders, and oilfield equipment.</p>
-                <span className="text-texasRed font-bold text-sm uppercase">Get Quote &rarr;</span>
+                <span className="text-texasRed font-bold text-sm uppercase">Learn More &rarr;</span>
               </div>
-            </div>
+            </Link>
 
           </div>
         </div>
