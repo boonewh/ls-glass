@@ -20,10 +20,8 @@ export async function POST(req: NextRequest) {
 
   try {
     await resend.emails.send({
-      // TODO (DNS): Once lsglassandshower.com is verified in Resend, swap this to:
-      //   from: "Lone Star Glass & Shower <noreply@lsglassandshower.com>"
-      from: "Lone Star Glass & Shower <onboarding@resend.dev>",
-      to: "will@pathsixsolutions.com",
+      from: "Lone Star Glass & Shower <noreply@lsglassandshower.com>",
+      to: "lsglassandshower@gmail.com",
       subject: `New Quote Request — ${service}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
