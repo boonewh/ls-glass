@@ -180,6 +180,7 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                     <option value="Home Windows">Residential Windows / Mirrors</option>
                     <option value="Commercial Glass">Commercial Glass / Storefront</option>
                     <option value="Auto Glass">Auto Glass</option>
+                    <option value="Oilfield & Heavy Equipment">Oilfield &amp; Heavy Equipment</option>
                   </select>
                 </div>
 
