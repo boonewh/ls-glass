@@ -9,6 +9,7 @@ interface ContactSectionProps {
 export default function ContactSection({ selectedService }: ContactSectionProps) {
   const [name, setName]       = useState("");
   const [phone, setPhone]     = useState("");
+  const [location, setLocation] = useState("");
   const [service, setService] = useState(selectedService ?? "General Inquiry");
   const [details, setDetails] = useState("");
   const [honeypot, setHoneypot] = useState(""); // bot trap
@@ -29,7 +30,7 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, service, details, honeypot }),
+        body: JSON.stringify({ name, phone, location, service, details, honeypot }),
       });
 
       const data = await res.json();
@@ -51,7 +52,7 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
     "w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-l-4 focus:border-texasRed bg-gray-50 transition-all duration-150";
 
   return (
-    <section id="contact" className="bg-slate-900 py-20 text-white">
+    <section id="contact" className="bg-slate-900 py-20 text-white scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
@@ -61,7 +62,7 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
               Let&apos;s Start Your Project
             </h2>
             <p className="text-gray-400 mb-10 text-lg">
-              Ready to transform your home or fix your glass? Visit our showroom or send us a message.
+              Have a project in mind? Choose your location and send us a message.
             </p>
 
             <div className="space-y-8">
@@ -70,7 +71,7 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                   <i className="fas fa-map-marker-alt text-xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl">Visit Us</h4>
+                  <h4 className="font-bold text-xl">West Texas — Odessa</h4>
                   <p className="text-gray-300">
                     2011 West 7th Street<br />
                     Odessa, TX 79763
@@ -83,7 +84,7 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                   <i className="fas fa-phone text-xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl">Call Us</h4>
+                  <h4 className="font-bold text-xl">Odessa Phone</h4>
                   <p className="text-gray-300 text-lg">
                     <a href="tel:4323163142" className="hover:text-texasRed transition">
                       (432) 316-3142
@@ -97,9 +98,24 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                   <i className="fas fa-clock text-xl"></i>
                 </div>
                 <div>
-                  <h4 className="font-bold text-xl">Hours</h4>
+                  <h4 className="font-bold text-xl">Odessa Hours</h4>
                   <p className="text-gray-300">Mon – Thu: 9am – 5pm</p>
                   <p className="text-gray-300">Fri: 8am – 5pm</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 border-t border-white/15 pt-8">
+                <div className="bg-texasRed p-3 rounded-full">
+                  <i className="fas fa-map-marker-alt text-xl" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl">Oklahoma — Bartlesville</h4>
+                  <p className="text-gray-300">
+                    1781 W 14th St.<br />
+                    Bartlesville, OK 74003
+                  </p>
+                  <p className="text-gray-400 text-sm mt-3">
+                    For inquiries, select Bartlesville in the form and tell us about your project.
+                  </p>
                 </div>
               </div>
             </div>
@@ -118,7 +134,7 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                 </div>
                 <h4 className="font-heading font-bold text-xl text-texasNavy">Request Sent!</h4>
                 <p className="text-gray-600">
-                  We&apos;ll be in touch shortly. If you need to reach us right away, call{" "}
+                  We&apos;ll be in touch about your {location === "Bartlesville, OK" ? "Bartlesville" : "West Texas"} inquiry shortly. To reach our Odessa office, call{" "}
                   <a href="tel:4323163142" className="text-texasRed font-bold">
                     (432) 316-3142
                   </a>.
@@ -159,7 +175,7 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                   <label className="block text-sm font-bold mb-2">Phone</label>
                   <input
                     type="tel"
-                    placeholder="(432) 555-0123"
+                    placeholder="Your Phone Number"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     required
@@ -168,7 +184,23 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                 </div>
 
                 <div className="mb-4">
-                  <label className="block text-sm font-bold mb-2">Service Needed</label>
+                  <label htmlFor="inquiry-location" className="block text-sm font-bold mb-2">Location</label>
+                  <select
+                    id="inquiry-location"
+                    name="location"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    required
+                    className={inputClass}
+                  >
+                    <option value="" disabled>Choose a location</option>
+                    <option value="Odessa, TX">West Texas — Odessa, TX</option>
+                    <option value="Bartlesville, OK">Oklahoma — Bartlesville, OK</option>
+                  </select>
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-bold mb-2">Service Interest</label>
                   <select
                     value={service}
                     onChange={(e) => setService(e.target.value)}
@@ -182,6 +214,11 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                     <option value="Auto Glass">Auto Glass</option>
                     <option value="Oilfield & Heavy Equipment">Oilfield &amp; Heavy Equipment</option>
                   </select>
+                  {location === "Bartlesville, OK" && (
+                    <p className="text-sm text-gray-600 mt-2">
+                      Tell us what you need and we&apos;ll confirm availability in Bartlesville.
+                    </p>
+                  )}
                 </div>
 
                 <div className="mb-6">

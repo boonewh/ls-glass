@@ -153,7 +153,6 @@ export default function OilfieldPage() {
 
       {/* ── SPECIAL PROJECTS (Oilfield Rig Glass) ── */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 bg-[url('/images/diamond-plate-pattern.png')] pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 

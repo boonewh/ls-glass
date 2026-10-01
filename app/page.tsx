@@ -85,6 +85,12 @@ export default function Home() {
           <p className="hero-reveal hero-d1 text-yellow-400 font-bold tracking-[0.3em] mb-4 text-sm md:text-base">
             SERVING ODESSA &amp; MIDLAND
           </p>
+          <a
+            href="#contact"
+            className="hero-reveal hero-d1 inline-block text-white text-base md:text-lg underline underline-offset-4 hover:text-yellow-400 transition mb-8"
+          >
+            Announcing our new location in Bartlesville, Oklahoma
+          </a>
           <h1 className="hero-reveal hero-d2 font-heading font-bold text-5xl md:text-7xl text-white mb-6 leading-tight text-shadow tracking-tight">
             GLASS PERFECTION.<br />NO COMPROMISE.
           </h1>

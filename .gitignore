@@ -1,21 +1,48 @@
 # dependencies
 node_modules/
+.npm/
+.pnpm-store/
 
 # Next.js build output
 .next/
 out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
 
-# environment variables — NEVER commit these
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# local environment variables (only commit blank/example templates)
+.env*
+!.env.example
 
-# Claude Code project files
+# local deployment and agent settings
+.vercel/
 .claude/
+.codex/
 
-# misc
+# test output
+coverage/
+playwright-report/
+test-results/
+
+# editor and operating-system files
+.idea/
+.vscode/
 .DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+
+# private keys and certificates
 *.pem
+*.key
+*.p12
+*.pfx
+
+# debug logs
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.next-dev.log

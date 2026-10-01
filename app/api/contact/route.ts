@@ -1,10 +1,8 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
-  const { name, phone, service, details, honeypot } = await req.json();
+  const { name, phone, location, service, details, honeypot } = await req.json();
 
   // Honeypot — bots fill this hidden field, humans don't
   if (honeypot) {
@@ -18,8 +16,16 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  if (location !== "Odessa, TX" && location !== "Bartlesville, OK") {
+    return NextResponse.json(
+      { error: "Please choose Odessa or Bartlesville for your inquiry." },
+      { status: 400 }
+    );
+  }
+
   try {
-    await resend.emails.send({
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { error } = await resend.emails.send({
       from: "Lone Star Glass & Shower <noreply@lsglassandshower.com>",
       to: "lsglassandshower@gmail.com",
       subject: `New Quote Request — ${service}`,
@@ -41,6 +47,10 @@ export async function POST(req: NextRequest) {
                 </td>
               </tr>
               <tr style="border-top: 1px solid #e5e7eb;">
+                <td style="padding: 10px 0; font-weight: bold; color: #374151;">Location</td>
+                <td style="padding: 10px 0; color: #111827;">${location}</td>
+              </tr>
+              <tr style="border-top: 1px solid #e5e7eb;">
                 <td style="padding: 10px 0; font-weight: bold; color: #374151;">Service</td>
                 <td style="padding: 10px 0; color: #111827;">${service}</td>
               </tr>
@@ -58,6 +68,8 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+
+    if (error) throw new Error(error.message);
 
     return NextResponse.json({ ok: true });
   } catch (err) {
