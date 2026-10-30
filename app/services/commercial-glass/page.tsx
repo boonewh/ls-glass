@@ -151,7 +151,7 @@ export default function CommercialGlassPage() {
                   </div>
                   <div>
                     <h5 className="font-bold text-texasNavy">High-Efficiency Glass</h5>
-                    <p className="text-sm text-gray-600">1" Insulated Glass Units with Low-E coatings to keep your building cool in the West Texas heat.</p>
+                    <p className="text-sm text-gray-600">1&quot; Insulated Glass Units with Low-E coatings to keep your building cool in the West Texas heat.</p>
                   </div>
                 </li>
               </ul>
@@ -206,11 +206,11 @@ export default function CommercialGlassPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-white/10 p-5 rounded border border-white/10 hover:border-blue-400 transition">
                    <h5 className="font-bold text-xl text-white mb-2">Office Dividers</h5>
-                   <p className="text-sm text-gray-400">Frameless 1/2" glass walls for conference rooms and executive offices. Sleek U-channel or patch fittings.</p>
+                   <p className="text-sm text-gray-400">Frameless 1/2&quot; glass walls for conference rooms and executive offices. Sleek U-channel or patch fittings.</p>
                 </div>
                 <div className="bg-white/10 p-5 rounded border border-white/10 hover:border-blue-400 transition">
                    <h5 className="font-bold text-xl text-white mb-2">Reception Barriers</h5>
-                   <p className="text-sm text-gray-400">Custom "sneeze guards" and reception windows. Keep your staff safe and professional.</p>
+                   <p className="text-sm text-gray-400">Custom &quot;sneeze guards&quot; and reception windows. Keep your staff safe and professional.</p>
                 </div>
               </div>
 
@@ -230,7 +230,7 @@ export default function CommercialGlassPage() {
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-texasNavy/90 via-transparent to-transparent"></div>
                  <div className="absolute bottom-6 left-6">
-                    <p className="font-bold text-white text-lg"><i className="fas fa-check-circle text-blue-400 mr-2"></i> 1/2" Tempered Safety Glass</p>
+                    <p className="font-bold text-white text-lg"><i className="fas fa-check-circle text-blue-400 mr-2"></i> 1/2&quot; Tempered Safety Glass</p>
                  </div>
                </div>
             </div>

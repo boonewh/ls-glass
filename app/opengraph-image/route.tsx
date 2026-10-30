@@ -11,7 +11,6 @@ export async function GET() {
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", background: "#003366", color: "white", padding: "52px 70px", borderBottom: "18px solid #B80C09" }}>
         {/* ImageResponse renders this into the share image, not the website DOM. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={`data:image/png;base64,${logo.toString("base64")}`} alt="Lone Star Glass & Shower" width="500" height="136" />
         <div style={{ display: "flex", flexDirection: "column", fontSize: 64, fontWeight: 700, lineHeight: 1.12 }}>
           <span>GLASS PERFECTION.</span>

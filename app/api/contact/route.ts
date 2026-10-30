@@ -1,31 +1,18 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import {escapeEmailText, readContact} from "@/lib/contact";
+
+const reply = (body: {ok: true} | {error: string}, status = 200) => NextResponse.json(body, {status, headers: {"Cache-Control": "private, no-store"}});
 
 export async function POST(req: NextRequest) {
-  const { name, phone, location, service, details, honeypot } = await req.json();
-
-  // Honeypot — bots fill this hidden field, humans don't
-  if (honeypot) {
-    return NextResponse.json({ ok: true }); // silently discard
-  }
-
-  if (!name?.trim() || !phone?.trim()) {
-    return NextResponse.json(
-      { error: "Name and phone are required." },
-      { status: 400 }
-    );
-  }
-
-  if (location !== "Odessa, TX" && location !== "Bartlesville, OK") {
-    return NextResponse.json(
-      { error: "Please choose Odessa or Bartlesville for your inquiry." },
-      { status: 400 }
-    );
-  }
+  const result = await readContact(req);
+  if (result.kind === "error") return reply({error: result.error}, result.status);
+  if (result.kind === "honeypot") return reply({ok: true});
+  const {name, phone, location, service, details} = result.input;
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error } = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Lone Star Glass & Shower <noreply@lsglassandshower.com>",
       to: "lsglassandshower@gmail.com",
       subject: `New Quote Request — ${service}`,
@@ -38,25 +25,25 @@ export async function POST(req: NextRequest) {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 10px 0; font-weight: bold; color: #374151; width: 120px;">Name</td>
-                <td style="padding: 10px 0; color: #111827;">${name}</td>
+                <td style="padding: 10px 0; color: #111827;">${escapeEmailText(name)}</td>
               </tr>
               <tr style="border-top: 1px solid #e5e7eb;">
                 <td style="padding: 10px 0; font-weight: bold; color: #374151;">Phone</td>
                 <td style="padding: 10px 0; color: #111827;">
-                  <a href="tel:${phone.replace(/\D/g, "")}" style="color: #B80C09;">${phone}</a>
+                  <a href="tel:${phone.replace(/\D/g, "")}" style="color: #B80C09;">${escapeEmailText(phone)}</a>
                 </td>
               </tr>
               <tr style="border-top: 1px solid #e5e7eb;">
                 <td style="padding: 10px 0; font-weight: bold; color: #374151;">Location</td>
-                <td style="padding: 10px 0; color: #111827;">${location}</td>
+                <td style="padding: 10px 0; color: #111827;">${escapeEmailText(location)}</td>
               </tr>
               <tr style="border-top: 1px solid #e5e7eb;">
                 <td style="padding: 10px 0; font-weight: bold; color: #374151;">Service</td>
-                <td style="padding: 10px 0; color: #111827;">${service}</td>
+                <td style="padding: 10px 0; color: #111827;">${escapeEmailText(service)}</td>
               </tr>
               <tr style="border-top: 1px solid #e5e7eb;">
                 <td style="padding: 10px 0; font-weight: bold; color: #374151; vertical-align: top;">Details</td>
-                <td style="padding: 10px 0; color: #111827;">${details?.trim() || "<em style='color:#9ca3af'>None provided</em>"}</td>
+                <td style="padding: 10px 0; color: #111827;">${details ? escapeEmailText(details) : "<em style='color:#9ca3af'>None provided</em>"}</td>
               </tr>
             </table>
           </div>
@@ -69,14 +56,14 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    if (error) throw new Error(error.message);
+    if (error || typeof data?.id !== "string" || !data.id) throw new Error("Provider did not confirm delivery acceptance.");
 
-    return NextResponse.json({ ok: true });
-  } catch (err) {
-    console.error("Resend error:", err);
-    return NextResponse.json(
+    return reply({ ok: true });
+  } catch {
+    console.error("Quote email could not be accepted by the provider.");
+    return reply(
       { error: "Failed to send. Please call us directly at (432) 316-3142." },
-      { status: 500 }
+      500
     );
   }
 }

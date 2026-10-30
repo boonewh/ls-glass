@@ -168,7 +168,7 @@ export default function AutoGlassPage() {
                  </div>
                </div>
                <p className="text-gray-600 mb-6">
-                 If the crack is longer than a dollar bill or in the driver's direct line of sight, safety standards require a full replacement.
+                 If the crack is longer than a dollar bill or in the driver&apos;s direct line of sight, safety standards require a full replacement.
                </p>
                <span className="inline-block bg-red-100 text-texasRed px-4 py-2 rounded-full font-bold text-sm">
                  OEM Quality Glass
@@ -212,7 +212,7 @@ export default function AutoGlassPage() {
                 <span className="text-white">FLEET ACCOUNTS.</span>
               </h2>
               <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                We know that if your truck isn't running, you aren't making money. We offer priority service for commercial fleets and oilfield vehicles.
+                We know that if your truck isn&apos;t running, you aren&apos;t making money. We offer priority service for commercial fleets and oilfield vehicles.
               </p>
               
               <ul className="space-y-4 mb-8">
