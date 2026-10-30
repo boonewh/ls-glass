@@ -63,7 +63,6 @@ export default function CustomCutGlassPage() {
   const heroRef     = useRef<HTMLDivElement>(null);
   const decorRef    = useReveal("in-view");
   const techRef     = useReveal("in-view");
-  const galleryRef  = useReveal("in-view");
 
   /* Parallax Effect */
   useEffect(() => {
@@ -148,7 +147,7 @@ export default function CustomCutGlassPage() {
               <h4 className="text-texasNavy/60 font-bold tracking-widest uppercase text-sm mb-2">Interior Solutions</h4>
               <h2 className="font-heading font-bold text-4xl text-texasNavy mb-6">FURNITURE &amp; DECOR</h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Don't settle for "standard" sizes. We fabricate glass to fit your existing frames, furniture, and fixtures. We stock 1/4", 3/8", and 1/2" clear glass, ready to cut.
+                Don&apos;t settle for &quot;standard&quot; sizes. We fabricate glass to fit your existing frames, furniture, and fixtures. We stock 1/4&quot;, 3/8&quot;, and 1/2&quot; clear glass, ready to cut.
               </p>
               
               <div className="grid grid-cols-1 gap-6">
@@ -228,7 +227,7 @@ export default function CustomCutGlassPage() {
               </h2>
               
               <p className="text-xl text-gray-300 mb-8 font-light">
-                Glass isn't just for looking through—it's for looking at. We fabricate custom mirrors and patterned glass to transform your kitchen, bath, or home gym.
+                Glass isn&apos;t just for looking through—it&apos;s for looking at. We fabricate custom mirrors and patterned glass to transform your kitchen, bath, or home gym.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/ContactSection";
@@ -20,16 +20,9 @@ function Divider({ top, bottom }: { top: string; bottom: string }) {
 }
 
 export default function Home() {
-  const [selectedService, setSelectedService] = useState("General Inquiry");
-
   const heroRef      = useRef<HTMLDivElement>(null);
   const trustBarRef  = useRef<HTMLDivElement>(null);
   const servicesRef  = useRef<HTMLDivElement>(null);
-
-  function selectService(serviceName: string) {
-    setSelectedService(serviceName);
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  }
 
   useEffect(() => {
     /* Parallax */
@@ -337,7 +330,7 @@ export default function Home() {
       <Divider top="#f9fafb" bottom="#0f172a" />
 
       {/* CONTACT */}
-      <ContactSection selectedService={selectedService} />
+      <ContactSection selectedService="General Inquiry" />
 
       {/* MAP */}
       <MapEmbed />

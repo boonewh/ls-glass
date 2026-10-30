@@ -132,7 +132,7 @@ export default function ResidentialGlassPage() {
               </div>
               <h2 className="font-heading font-black text-3xl md:text-5xl text-texasNavy mb-6 leading-tight">
                 WHY PAY FOR FRAMES <br />
-                <span className="text-gray-400">YOU DON'T NEED?</span>
+                <span className="text-gray-400">YOU DON&apos;T NEED?</span>
               </h2>
               <p className="text-gray-600 text-lg mb-6 leading-relaxed">
                 Other window companies in West Texas will tell you that a broken seal or a crack means you need to rip out the entire window unit. <strong>That is rarely true.</strong>
@@ -196,7 +196,7 @@ export default function ResidentialGlassPage() {
               </div>
               <h3 className="font-heading font-bold text-2xl text-texasNavy mb-4">Fix Broken Glass</h3>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Accidents happen. If you have shattered glass, a stuck sash, or a window that just won't close, we provide fast, safe repairs to secure your home.
+                Accidents happen. If you have shattered glass, a stuck sash, or a window that just won&apos;t close, we provide fast, safe repairs to secure your home.
               </p>
               <ul className="text-left w-full space-y-3 mb-8 pl-4">
                 <li className="flex items-center text-sm text-gray-700"><i className="fas fa-check text-red-500 mr-3"></i> Emergency Board-up</li>
@@ -215,7 +215,7 @@ export default function ResidentialGlassPage() {
               </div>
               <h3 className="font-heading font-bold text-2xl text-white mb-4">Upgrade Your Look</h3>
               <p className="text-gray-300 mb-8 leading-relaxed">
-                You don't have to wait for a break to upgrade. Replacing old, foggy, or grid-style glass with clear, modern Low-E glass transforms your curb appeal.
+                You don&apos;t have to wait for a break to upgrade. Replacing old, foggy, or grid-style glass with clear, modern Low-E glass transforms your curb appeal.
               </p>
               <ul className="text-left w-full space-y-3 mb-8 pl-4">
                 <li className="flex items-center text-sm text-gray-200"><i className="fas fa-check text-blue-400 mr-3"></i> Remove Ugly Grids/Mullions</li>
@@ -270,7 +270,7 @@ export default function ResidentialGlassPage() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="border-l-4 border-blue-600 pl-4">
                   <h5 className="font-bold text-xl text-texasNavy">Grid Removal</h5>
-                  <p className="text-sm text-gray-500 mt-1">Get that clean, modern "open view" look.</p>
+                  <p className="text-sm text-gray-500 mt-1">Get that clean, modern &quot;open view&quot; look.</p>
                 </div>
                 <div className="border-l-4 border-blue-600 pl-4">
                   <h5 className="font-bold text-xl text-texasNavy">Low-E Tech</h5>
@@ -291,7 +291,7 @@ export default function ResidentialGlassPage() {
            <div className="text-center mb-16">
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-texasNavy mb-4">COMMON REPAIRS</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We fix the problems that others won't touch. From historic single-pane putty work to modern insulated units.
+              We fix the problems that others won&apos;t touch. From historic single-pane putty work to modern insulated units.
             </p>
           </div>
 

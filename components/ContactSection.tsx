@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import {CONTACT_LIMITS, CONTACT_SERVICES, contactService} from "@/lib/contact-services";
 
 interface ContactSectionProps {
   selectedService?: string;
@@ -10,16 +11,16 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
   const [name, setName]       = useState("");
   const [phone, setPhone]     = useState("");
   const [location, setLocation] = useState("");
-  const [service, setService] = useState(selectedService ?? "General Inquiry");
+  const preset = contactService(selectedService ?? "General Inquiry") ?? "General Inquiry";
+  const [selection, setSelection] = useState({preset: selectedService, service: preset});
+  // A new page/CTA proposal resets only the service, preserving the user's draft.
+  if (selection.preset !== selectedService) setSelection({preset: selectedService, service: preset});
+  const service = selection.preset === selectedService ? selection.service : preset;
   const [details, setDetails] = useState("");
   const [honeypot, setHoneypot] = useState(""); // bot trap
 
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
-
-  useEffect(() => {
-    if (selectedService) setService(selectedService);
-  }, [selectedService]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -160,25 +161,29 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                 />
 
                 <div className="mb-4">
-                  <label className="block text-sm font-bold mb-2">Name</label>
+                  <label htmlFor="quote-name" className="block text-sm font-bold mb-2">Name</label>
                   <input
+                    id="quote-name"
                     type="text"
                     placeholder="Your Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
+                    maxLength={CONTACT_LIMITS.name}
                     className={inputClass}
                   />
                 </div>
 
                 <div className="mb-4">
-                  <label className="block text-sm font-bold mb-2">Phone</label>
+                  <label htmlFor="quote-phone" className="block text-sm font-bold mb-2">Phone</label>
                   <input
+                    id="quote-phone"
                     type="tel"
                     placeholder="Your Phone Number"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     required
+                    maxLength={CONTACT_LIMITS.phone}
                     className={inputClass}
                   />
                 </div>
@@ -200,19 +205,14 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                 </div>
 
                 <div className="mb-4">
-                  <label className="block text-sm font-bold mb-2">Service Interest</label>
+                  <label htmlFor="quote-service" className="block text-sm font-bold mb-2">Service Interest</label>
                   <select
+                    id="quote-service"
                     value={service}
-                    onChange={(e) => setService(e.target.value)}
+                    onChange={(e) => setSelection({preset: selectedService, service: contactService(e.target.value) ?? "General Inquiry"})}
                     className={inputClass}
                   >
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Bathroom Remodel">Bathroom Remodel (Full Service)</option>
-                    <option value="Custom Shower">Custom Shower</option>
-                    <option value="Home Windows">Residential Windows / Mirrors</option>
-                    <option value="Commercial Glass">Commercial Glass / Storefront</option>
-                    <option value="Auto Glass">Auto Glass</option>
-                    <option value="Oilfield & Heavy Equipment">Oilfield &amp; Heavy Equipment</option>
+                    {CONTACT_SERVICES.map(({value, label}) => <option key={value} value={value}>{label}</option>)}
                   </select>
                   {location === "Bartlesville, OK" && (
                     <p className="text-sm text-gray-600 mt-2">
@@ -222,18 +222,20 @@ export default function ContactSection({ selectedService }: ContactSectionProps)
                 </div>
 
                 <div className="mb-6">
-                  <label className="block text-sm font-bold mb-2">Details</label>
+                  <label htmlFor="quote-details" className="block text-sm font-bold mb-2">Details</label>
                   <textarea
+                    id="quote-details"
                     rows={4}
                     placeholder="Tell us about your project..."
                     value={details}
+                    maxLength={CONTACT_LIMITS.details}
                     onChange={(e) => setDetails(e.target.value)}
                     className={inputClass}
                   />
                 </div>
 
                 {status === "error" && (
-                  <p className="text-red-600 text-sm mb-4 flex items-center gap-2">
+                  <p role="alert" className="text-red-600 text-sm mb-4 flex items-center gap-2">
                     <i className="fas fa-exclamation-circle"></i> {errorMsg}
                   </p>
                 )}
