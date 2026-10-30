@@ -9,7 +9,9 @@ an unused icon API. Pin Node24.22.1/npm11.17.0 and matching Node/React types.
 The original lint command/configuration were broken. ESLint10.14.0 now uses Next's
 modern core-web-vitals and TypeScript flat exports. Some plugin peer annotations
 lag behind10; normal npm resolution emits peer warnings, as described by Next.
-No force/legacy-peer flags or lint-rule suppression are used. Mechanical JSX
+No force/legacy-peer flags are used. The existing bitmap-only img exception is
+scoped to the ImageResponse route in flat config, avoiding platform-specific unused
+inline-suppression warnings. All other rules remain active. Mechanical JSX
 entity escapes preserve displayed copy; unused dead code is removed.
 
 ## Contact correctness and input protection
